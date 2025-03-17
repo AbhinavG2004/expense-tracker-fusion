@@ -48,45 +48,45 @@ const Dashboard: React.FC = () => {
   
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200">
+      <Card className="bg-gradient-to-br from-violet-50 to-purple-100 border-purple-200 hover:shadow-lg transition-all">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium text-indigo-700">
+          <CardTitle className="text-sm font-medium text-purple-700">
             Total Expenses
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold font-satoshi text-indigo-900">${totalExpenses.toFixed(2)}</p>
-          <p className="text-xs text-indigo-600">All time</p>
+          <p className="text-2xl font-bold font-satoshi bg-gradient-to-r from-purple-700 to-indigo-700 bg-clip-text text-transparent">₹{totalExpenses.toFixed(2)}</p>
+          <p className="text-xs text-purple-600">All time</p>
         </CardContent>
       </Card>
       
-      <Card className="bg-gradient-to-br from-rose-50 to-pink-50 border-rose-200">
+      <Card className="bg-gradient-to-br from-rose-50 to-pink-100 border-rose-200 hover:shadow-lg transition-all">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-rose-700">
             Current Month
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold font-satoshi text-rose-900">${currentMonthTotal.toFixed(2)}</p>
+          <p className="text-2xl font-bold font-satoshi bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">₹{currentMonthTotal.toFixed(2)}</p>
           <p className="text-xs text-rose-600">{format(today, 'MMMM yyyy')}</p>
         </CardContent>
       </Card>
       
-      <Card className="bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-200">
+      <Card className="bg-gradient-to-br from-amber-50 to-yellow-100 border-amber-200 hover:shadow-lg transition-all">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-amber-700">
             Last 7 Days
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold font-satoshi text-amber-900">${thisWeekTotal.toFixed(2)}</p>
-          <p className="text-xs text-amber-600">Weekly average: ${(thisWeekTotal / 7).toFixed(2)}/day</p>
+          <p className="text-2xl font-bold font-satoshi bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">₹{thisWeekTotal.toFixed(2)}</p>
+          <p className="text-xs text-amber-600">Weekly average: ₹{(thisWeekTotal / 7).toFixed(2)}/day</p>
         </CardContent>
       </Card>
       
-      <Card className="md:col-span-2 lg:col-span-3 bg-gradient-to-br from-violet-50 to-indigo-50 border-violet-200">
+      <Card className="md:col-span-2 lg:col-span-3 bg-gradient-to-br from-teal-50 to-cyan-100 border-teal-200 hover:shadow-lg transition-all">
         <CardHeader>
-          <CardTitle className="text-violet-900">Expenses by Category</CardTitle>
+          <CardTitle className="text-teal-900">Expenses by Category</CardTitle>
         </CardHeader>
         <CardContent>
           {categoryTotals.length > 0 ? (
@@ -108,13 +108,13 @@ const Dashboard: React.FC = () => {
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
-                  <Tooltip formatter={(value) => [`$${value}`, 'Amount']} />
+                  <Tooltip formatter={(value) => [`₹${value}`, 'Amount']} />
                   <Legend />
                 </PieChart>
               </ResponsiveContainer>
             </div>
           ) : (
-            <p className="text-center py-10 text-violet-500">No data available. Add expenses with categories to see the chart.</p>
+            <p className="text-center py-10 text-teal-500">No data available. Add expenses with categories to see the chart.</p>
           )}
         </CardContent>
       </Card>

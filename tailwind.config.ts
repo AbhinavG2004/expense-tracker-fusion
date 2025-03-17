@@ -57,7 +57,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				expense: {
-					DEFAULT: '#6366F1',
+					DEFAULT: '#8B5CF6',
 					foreground: '#FFFFFF'
 				},
 				sidebar: {
@@ -97,6 +97,14 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			backgroundImage: {
+				'gradient-candy': 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+				'gradient-peach': 'linear-gradient(to right, #ee9ca7, #ffdde1)',
+				'gradient-ocean': 'linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%)',
+				'gradient-sunset': 'linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)',
+				'gradient-purple': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
+				'gradient-mint': 'linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%)',
 			}
 		}
 	},
