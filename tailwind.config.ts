@@ -57,7 +57,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				expense: {
-					DEFAULT: '#4F46E5',
+					DEFAULT: '#6366F1',
 					foreground: '#FFFFFF'
 				},
 				sidebar: {

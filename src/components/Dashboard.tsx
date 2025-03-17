@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
     (sum, expense) => sum + expense.amount, 0
   );
   
-  // Get category totals
+  // Fix: Ensure expenses have valid categories before calculating totals
   const categoryTotals = categories.map(category => {
     const total = expenses
       .filter(expense => expense.category === category.name)
@@ -48,45 +48,45 @@ const Dashboard: React.FC = () => {
   
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <Card>
+      <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-200">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium text-muted-foreground">
+          <CardTitle className="text-sm font-medium text-indigo-700">
             Total Expenses
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold font-satoshi">${totalExpenses.toFixed(2)}</p>
-          <p className="text-xs text-muted-foreground">All time</p>
+          <p className="text-2xl font-bold font-satoshi text-indigo-900">${totalExpenses.toFixed(2)}</p>
+          <p className="text-xs text-indigo-600">All time</p>
         </CardContent>
       </Card>
       
-      <Card>
+      <Card className="bg-gradient-to-br from-rose-50 to-pink-50 border-rose-200">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium text-muted-foreground">
+          <CardTitle className="text-sm font-medium text-rose-700">
             Current Month
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold font-satoshi">${currentMonthTotal.toFixed(2)}</p>
-          <p className="text-xs text-muted-foreground">{format(today, 'MMMM yyyy')}</p>
+          <p className="text-2xl font-bold font-satoshi text-rose-900">${currentMonthTotal.toFixed(2)}</p>
+          <p className="text-xs text-rose-600">{format(today, 'MMMM yyyy')}</p>
         </CardContent>
       </Card>
       
-      <Card>
+      <Card className="bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-200">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium text-muted-foreground">
+          <CardTitle className="text-sm font-medium text-amber-700">
             Last 7 Days
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold font-satoshi">${thisWeekTotal.toFixed(2)}</p>
-          <p className="text-xs text-muted-foreground">Weekly average: ${(thisWeekTotal / 7).toFixed(2)}/day</p>
+          <p className="text-2xl font-bold font-satoshi text-amber-900">${thisWeekTotal.toFixed(2)}</p>
+          <p className="text-xs text-amber-600">Weekly average: ${(thisWeekTotal / 7).toFixed(2)}/day</p>
         </CardContent>
       </Card>
       
-      <Card className="md:col-span-2 lg:col-span-3">
+      <Card className="md:col-span-2 lg:col-span-3 bg-gradient-to-br from-violet-50 to-indigo-50 border-violet-200">
         <CardHeader>
-          <CardTitle>Expenses by Category</CardTitle>
+          <CardTitle className="text-violet-900">Expenses by Category</CardTitle>
         </CardHeader>
         <CardContent>
           {categoryTotals.length > 0 ? (
@@ -114,7 +114,7 @@ const Dashboard: React.FC = () => {
               </ResponsiveContainer>
             </div>
           ) : (
-            <p className="text-center py-10 text-muted-foreground">No data available</p>
+            <p className="text-center py-10 text-violet-500">No data available. Add expenses with categories to see the chart.</p>
           )}
         </CardContent>
       </Card>
