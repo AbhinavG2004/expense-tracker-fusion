@@ -105,6 +105,10 @@ export default {
 				'gradient-sunset': 'linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)',
 				'gradient-purple': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
 				'gradient-mint': 'linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%)',
+				'dark-gradient': 'linear-gradient(to bottom, #1A1F2C, #221F26)',
+				'dark-card': 'linear-gradient(145deg, #222222, #333333)',
+				'dark-purple-gradient': 'linear-gradient(145deg, #2D1A54, #2A1C50)',
+				'dark-blue-gradient': 'linear-gradient(145deg, #1E2A4A, #1C2346)',
 			}
 		}
 	},

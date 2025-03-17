@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,19 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.dark-glow {
+  box-shadow: 0 0 15px rgba(137, 92, 246, 0.5);
+}
+
+.dark-card {
+  background: linear-gradient(145deg, #252525, #2d2d2d);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark .text-gradient {
+  background: linear-gradient(to right, #c084fc, #a855f7, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
