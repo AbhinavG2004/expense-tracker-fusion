@@ -22,7 +22,7 @@ const Index = () => {
         </header>
         
         <div className="flex justify-between items-center mb-6">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue="list" value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full max-w-md grid-cols-2">
               <TabsTrigger value="list" className="flex items-center gap-2">
                 <ListChecks className="h-4 w-4" />
@@ -33,6 +33,18 @@ const Index = () => {
                 Dashboard
               </TabsTrigger>
             </TabsList>
+            
+            <TabsContent value="list" className="mt-6">
+              <div className="bg-card rounded-lg shadow-sm p-6">
+                <ExpenseList />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="dashboard" className="mt-6">
+              <div className="bg-card rounded-lg shadow-sm p-6">
+                <Dashboard />
+              </div>
+            </TabsContent>
           </Tabs>
           
           <Dialog open={showAddDialog} onOpenChange={setShowAddDialog}>
@@ -49,16 +61,6 @@ const Index = () => {
               <ExpenseForm onSubmit={() => setShowAddDialog(false)} />
             </DialogContent>
           </Dialog>
-        </div>
-        
-        <div className="bg-card rounded-lg shadow-sm p-6">
-          <TabsContent value="list" className="mt-0">
-            <ExpenseList />
-          </TabsContent>
-          
-          <TabsContent value="dashboard" className="mt-0">
-            <Dashboard />
-          </TabsContent>
         </div>
         
         <footer className="mt-10 text-center text-sm text-muted-foreground">
