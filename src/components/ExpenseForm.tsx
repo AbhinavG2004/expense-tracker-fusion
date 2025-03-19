@@ -12,6 +12,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { useExpenses } from '@/context/ExpenseContext';
 import { Expense } from '@/types/expense';
 
+
 interface ExpenseFormProps {
   onSubmit?: () => void;
   editExpense?: Expense;

@@ -9,6 +9,7 @@ import { format } from 'date-fns';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import ExpenseForm from './ExpenseForm';
 
+
 interface ExpenseCardProps {
   expense: Expense;
 }
