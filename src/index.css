@@ -119,6 +119,47 @@
     color: #000000 !important; /* Dark gray text that will be visible on light backgrounds */
   }
   
+  /* Fix for date picker trigger button - target button with calendar icon */
+  .dark button[variant="outline"] span,
+  .dark [role="button"] span,
+  .dark .PopoverTrigger span {
+    color: #1f2937 !important;
+  }
+  
+  /* Target the date display specifically within form buttons */
+  .dark form button span {
+    color: #1f2937 !important;
+  }
+  
+  /* Make date selector button text visible */
+  .dark [class*="bg-white"] span,
+  .dark [class*="bg-white"] * {
+    color: #1f2937 !important;
+  }
+  
+  /* Target date input field directly */
+  .dark div[role="dialog"] input,
+  .dark div[role="dialog"] button,
+  .dark div[role="dialog"] span {
+    color: #1f2937 !important;
+  }
+  
+  /* Target date display field specifically */
+  .dark [aria-label="Date"] input,
+  .dark [aria-label="Date"] span,
+  .dark form div:has(svg[class*="Calendar"]) * {
+    color: #1f2937 !important;
+  }
+  
+  /* Ensure the date is visible after selection */
+  .dark input[type="date"],
+  .dark input.bg-white,
+  .dark button.bg-white,
+  .dark button.bg-white span,
+  .dark div.bg-white span {
+    color: #1f2937 !important;
+  }
+  
   .dark .react-datepicker__input-container input,
   .dark [role="combobox"],
   .dark [role="listbox"],
