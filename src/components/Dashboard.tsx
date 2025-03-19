@@ -4,6 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useExpenses } from '@/context/ExpenseContext';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import { format } from 'date-fns';
+import 'react-datepicker/dist/react-datepicker.css';
+import './datepicker-override.css';
+
 
 const Dashboard: React.FC = () => {
   const { expenses, categories, totalExpenses } = useExpenses();

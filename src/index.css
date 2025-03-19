@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,6 +30,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
+    --input-foreground: 222.2 47.4% 11.2%; /* Dark text for light mode inputs */
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
@@ -51,6 +51,7 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+ 
 
   .dark {
     --background: 240 10% 7%;
@@ -79,6 +80,7 @@
 
     --border: 240 3.7% 16%;
     --input: 240 3.7% 16%;
+    --input-foreground: 220 13% 30%; /* Dark gray text for inputs in dark mode - visible on light backgrounds */
     --ring: 271 91% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -107,4 +109,114 @@
 
 .dark-card {
   @apply bg-card/95 backdrop-blur-sm border border-white/5 shadow-lg;
+}
+
+@layer components {
+  /* Target all inputs and form elements in dark mode */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    color: #000000 !important; /* Dark gray text that will be visible on light backgrounds */
+  }
+  
+  .dark .react-datepicker__input-container input,
+  .dark [role="combobox"],
+  .dark [role="listbox"],
+  .dark [role="option"],
+  .dark .category-selector,
+  .dark .date-picker {
+    color: #1f2937 !important; /* Dark gray text */
+  }
+  
+  /* Target dropdown menus and calendar components */
+  .dark [role="listbox"] *,
+  .dark [role="option"] *,
+  .dark .calendar-dropdown * {
+    color: #1f2937 !important;
+  }
+  
+  /* Target specifically the category component */
+  .dark [data-component="category-select"] *,
+  .dark [data-component="date-picker"] * {
+    color: #1f2937 !important;
+  }
+}
+
+/* Make datepicker in dark mode look exactly like light mode */
+.dark .react-datepicker {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  font-family: inherit !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark .react-datepicker * {
+  color: #1f2937 !important;
+}
+
+.dark .react-datepicker__header {
+  background-color: white !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.dark .react-datepicker__month-container {
+  background-color: white !important;
+}
+
+.dark .react-datepicker__day-name {
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+}
+
+.dark .react-datepicker__day {
+  color: #1f2937 !important;
+}
+
+.dark .react-datepicker__current-month {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+}
+
+.dark .react-datepicker__day--selected,
+.dark .react-datepicker__day--keyboard-selected {
+  background-color: #8B5CF6 !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.dark .react-datepicker__day--today {
+  font-weight: bold !important;
+}
+
+.dark .react-datepicker__day:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.dark .react-datepicker__day--outside-month {
+  color: #9ca3af !important;
+}
+
+.dark .react-datepicker__triangle {
+  border-bottom-color: white !important;
+}
+
+.dark .react-datepicker__navigation-icon::before {
+  border-color: #6b7280 !important;
+}
+
+.dark .react-datepicker__navigation:hover *::before {
+  border-color: #374151 !important;
+}
+
+.dark .react-datepicker__input-time-container,
+.dark .react-datepicker-time__header,
+.dark .react-datepicker__time-container,
+.dark .react-datepicker__time-list-item {
+  background-color: white !important;
+  color: #1f2937 !important;
+}
+
+.dark .react-datepicker__time-list-item--selected {
+  background-color: #8B5CF6 !important;
+  color: white !important;
 }
